@@ -6,9 +6,9 @@ import { auth } from '../middleware/auth.middleware.js';
 const userRouter = express.Router();
 const userController = new UserController();
 
-// userRouter.get("/", (req, res, next) => {
-//     userController.renderAdminLogin(req, res, next);
-// });
+userRouter.get("/", (req, res, next) => {
+    userController.renderAdminLogin(req, res, next);
+});
 
 userRouter.get("/admin_login", (req, res, next) => {
     userController.renderAdminLogin(req, res, next);
