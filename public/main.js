@@ -8,7 +8,7 @@ function deleteEmployee(customId, role) {
         const popUp = document.getElementById('popup-overlay');
         popUp.style.display = 'flex';
         yesBtn.addEventListener('click', () => {
-            fetch(`http://localhost:3400/main_page/view_employee/${customId}`, {
+            fetch(`https://employee-review-system-sk-2.onrender.com/main_page/view_employee/${customId}`, {
                 method: "DELETE"
             }).then(response => {
                 window.location.href = response.url;
@@ -28,7 +28,7 @@ async function updateAdmin(customId, role) {
     if (role == "Admin") {
         displayPopup("Already admin user");
     } else {
-        fetch(`http://localhost:3400/main_page/view_employee/update_role/${customId}`, {
+        fetch(`https://employee-review-system-sk-2.onrender.com/main_page/view_employee/update_role/${customId}`, {
             method: "GET"
         }).then(response => {
             window.location.href = response.url;
@@ -45,7 +45,7 @@ function deletePerformance(_id) {
     const popUp = document.getElementById('popup-overlay');
     popUp.style.display = 'flex';
     yesBtn.addEventListener('click', () => {
-        fetch(`http://localhost:3400/main_page/view_performance/${_id}`, {
+        fetch(`https://employee-review-system-sk-2.onrender.com/main_page/view_performance/${_id}`, {
             method: "DELETE"
         }).then(response => {
             window.location.href = response.url;
@@ -73,7 +73,7 @@ assignFeedback.addEventListener('click', (event) => {
         jsonData[key] = value;
     }
     console.log(JSON.stringify(jsonData));
-    fetch(`http://localhost:3400/main_page/assign_review`, {
+    fetch(`https://employee-review-system-sk-2.onrender.com/main_page/assign_review`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json' // adjust content type as needed
