@@ -19,7 +19,7 @@ server.use(
     session({
         secret: "Keypad Cat",
         resave: false,
-        saveUninitialized: true,
+        saveUninitialized: false,
         cookie: { secure: false },
     })
 );
