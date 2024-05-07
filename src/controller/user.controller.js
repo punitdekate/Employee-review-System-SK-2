@@ -121,7 +121,7 @@ export default class UserController {
             const { email, password } = req.body;
             const user = await this.userRepository.findUserBySpecifiedFactor({ email: email, role: "Admin" });
             if (!user) {
-                return res.render('admin-login', { user: null, "error": "Invalid credentials" });
+                return res.render('admin-login', { user: null, "error": { msg: "Invalid credentials" } });
             } else {
                 let verified = await user.comparePassword(password);
                 if (!verified) {
