@@ -8,10 +8,9 @@ function deleteEmployee(customId, role) {
         const popUp = document.getElementById('popup-overlay');
         popUp.style.display = 'flex';
         yesBtn.addEventListener('click', () => {
-            fetch(`http://localhost:3400/main_page/view_employee/${customId}`, {
-                method: "DELETE"
             fetch(`https://employee-review-system-sk-2.onrender.com/main_page/view_employee/${customId}`, {
-                method: "DELETE"
+                method: "DELETE",
+                credentials: "include"
             }).then(response => {
                 window.location.href = response.url;
                 popUp.style.display = 'none';
@@ -30,10 +29,9 @@ async function updateAdmin(customId, role) {
     if (role == "Admin") {
         displayPopup("Already admin user");
     } else {
-        fetch(`http://localhost:3400/main_page/view_employee/update_role/${customId}`, {
-            method: "GET"
         fetch(`https://employee-review-system-sk-2.onrender.com/main_page/view_employee/update_role/${customId}`, {
-            method: "GET"
+            method: "GET",
+            credentials: "include"
         }).then(response => {
             window.location.href = response.url;
         }).catch(error => {
@@ -49,10 +47,9 @@ function deletePerformance(_id) {
     const popUp = document.getElementById('popup-overlay');
     popUp.style.display = 'flex';
     yesBtn.addEventListener('click', () => {
-        fetch(`http://localhost:3400/main_page/view_performance/${_id}`, {
-            method: "DELETE"
         fetch(`https://employee-review-system-sk-2.onrender.com/main_page/view_performance/${_id}`, {
-            method: "DELETE"
+            method: "DELETE",
+            credentials: "include"
         }).then(response => {
             window.location.href = response.url;
             popUp.style.display = 'none';
@@ -80,7 +77,8 @@ assignFeedback.addEventListener('click', (event) => {
     }
     console.log(JSON.stringify(jsonData));
     fetch(`https://employee-review-system-sk-2.onrender.com/main_page/assign_review`, {
-        method: "POST"
+        method: "POST",
+        credentials: "include"
         headers: {
             'Content-Type': 'application/json' // adjust content type as needed
         },
