@@ -9,8 +9,7 @@ function deleteEmployee(customId, role) {
         popUp.style.display = 'flex';
         yesBtn.addEventListener('click', () => {
             fetch(`http://localhost:3400/main_page/view_employee/${customId}`, {
-                method: "DELETE",
-                credentials: "include"
+                method: "DELETE"
             fetch(`https://employee-review-system-sk-2.onrender.com/main_page/view_employee/${customId}`, {
                 method: "DELETE"
             }).then(response => {
@@ -32,8 +31,7 @@ async function updateAdmin(customId, role) {
         displayPopup("Already admin user");
     } else {
         fetch(`http://localhost:3400/main_page/view_employee/update_role/${customId}`, {
-            method: "GET",
-            credentials: "include"
+            method: "GET"
         fetch(`https://employee-review-system-sk-2.onrender.com/main_page/view_employee/update_role/${customId}`, {
             method: "GET"
         }).then(response => {
@@ -52,8 +50,7 @@ function deletePerformance(_id) {
     popUp.style.display = 'flex';
     yesBtn.addEventListener('click', () => {
         fetch(`http://localhost:3400/main_page/view_performance/${_id}`, {
-            method: "DELETE",
-            credentials: "include"
+            method: "DELETE"
         fetch(`https://employee-review-system-sk-2.onrender.com/main_page/view_performance/${_id}`, {
             method: "DELETE"
         }).then(response => {
@@ -83,8 +80,7 @@ assignFeedback.addEventListener('click', (event) => {
     }
     console.log(JSON.stringify(jsonData));
     fetch(`https://employee-review-system-sk-2.onrender.com/main_page/assign_review`, {
-        method: "POST",
-        credentials: "include",
+        method: "POST"
         headers: {
             'Content-Type': 'application/json' // adjust content type as needed
         },
