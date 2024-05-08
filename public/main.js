@@ -78,7 +78,7 @@ assignFeedback.addEventListener('click', (event) => {
     console.log(JSON.stringify(jsonData));
     fetch(`https://employee-review-system-sk-2.onrender.com/main_page/assign_review`, {
         method: "POST",
-        credentials: "include"
+        credentials: "include",
         headers: {
             'Content-Type': 'application/json' // adjust content type as needed
         },
